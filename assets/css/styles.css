@@ -8,12 +8,21 @@ body {
 h2 {
     color: #333;
 }
-img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 20px;
-}
 
+#logo {
+    width: 100px; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto;
+}
+#headline {
+    text-align: center;
+}
+#message {
+    text-align: center;
+    font-size: xx-large;
+    color: rgba(255, 0, 0, 0.612);
+}
 form {
     max-width: 400px;
     margin: 20px auto;
