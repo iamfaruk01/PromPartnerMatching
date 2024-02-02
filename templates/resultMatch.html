@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Result</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <h2 id="headline">Prom Partner Matching</h2>
+    <img id="logo" src="{% static 'images/logoCollege.png' %}" alt="logoCollege">
+    <h2 id="headline">Barak Valley Engineering College</h2>
+
+    <h2 id="headline" id="result">Matching Result</h2>
+
+    <form id="matching-form" class="matching-form">
+        <p id="message">Hi, {{ name }}!</p>
+
+        {% if matching_partners %}
+            <p id="message">Here are your matching partners:</p>
+            <ul>
+                {% for partner in matching_partners %}
+                    <li>{{ partner.name }} - {{ partner.email }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p id="message">No matches found so far.</p>
+            <p id="message">You have successfully submitted your preferences.</p>
+            <p id="message">On matching, you will get an email. Best of Luck!!!</p>
+
+        {% endif %}
+
+        
+        <!-- You can display additional information or further instructions here -->
+    </form>
+</body>
+
+</html>

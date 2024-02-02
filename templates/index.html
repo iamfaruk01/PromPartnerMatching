@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prom Partner Matching</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    
+</head>
+
+<body>
+    <h2 id="headline">Prom Partner Matching </h2>
+    <img id="logo" src="{% static 'images/logoCollege.png' %}" alt="logoCollege">
+    <h2 id="headline">Barak Valley Engineering College</h2>
+
+    <form method="post" action="{% url 'match_partners' %}">
+        {% csrf_token %}
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="preferred_partner">Preferred Partner Name:</label>
+        <div id="preferred-partners">
+            <input type="text" id="preferred_partner" name="preferred_partner" required><br>
+        </div>
+        <br><br>
+        <button type="submit" style="background-color: red;">Find Any Match</button>
+    </form>
+    <h3 id="headline">Created By: Faruk Khan</h3>
+    <h3 id="headline">Idea By: Shahid Anowar</h3>
+
+</body>
+
+</html>
